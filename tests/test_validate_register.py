@@ -17,7 +17,7 @@ def asset(asset_id="A-001"):
     return {
         "asset_id": asset_id, "name": "Wallet API", "asset_type": "Service",
         "description": "Customer API", "owner": "Head of Engineering",
-        "data_classification": "Confidential", "criticality": "5", "hosting": "AWS",
+        "data_classification": "Confidential", "criticality": "5", "hosting": "Azure",
     }
 
 
