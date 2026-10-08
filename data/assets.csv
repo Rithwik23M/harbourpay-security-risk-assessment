@@ -3,7 +3,7 @@ asset_id,name,asset_type,description,owner,data_classification,criticality,hosti
 A-001,Customer wallet API,Service,Main API used by the mobile app,Head of Engineering,Confidential,5,Azure
 A-002,Production PostgreSQL database,Database,Customer records and transactions,Head of Engineering,Restricted,5,Azure
 A-003,KYC document store,Storage,Passport and ID images,Head of Compliance,Restricted,4,Azure
-A-004,Microsoft Entra ID SSO,Identity,Staff login and MFA,IT Lead,Confidential,5,SaaS
+A-004,Microsoft Entra ID,Identity,Staff login and MFA,IT Lead,Confidential,5,SaaS
 A-005,Staff laptops,Endpoint,Company and personal devices,IT Lead,Internal,3,Remote
 A-006,Mobile app (iOS and Android),Application,Customer wallet app on iOS and Android,Head of Engineering,Confidential,5,App stores and Azure
 A-007,Admin back-office portal,Application,Staff portal to manage customers and transactions,Head of Operations,Restricted,4,Azure
