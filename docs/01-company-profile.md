@@ -7,7 +7,7 @@
 - **Name:** HarbourPay Ltd
 - **Location:** Dublin, Ireland
 - **Size:** 50 staff, Series A funded
-- **Product:** a mobile wallet and card-issuing API for small merchants
+- **Product:** a prepaid payroll card and mobile app for gig workers
 - **Trigger event:** a partner bank has asked for evidence of a working security programme within 90 days
 
 ## Staff (assumed)
@@ -23,9 +23,9 @@ Working model: remote-first, staff use a mix of company and personal phones.
 
 ## Technology (assumed)
 
-- Cloud: AWS, with microservices behind an API gateway
+- Cloud: Microsoft Azure, with microservices behind an API gateway
 - Database: PostgreSQL
-- Identity: Okta SSO with MFA for staff; customers log in with email, password and SMS code
+- Identity: Okta SSO for staff, but MFA is not enforced for the support team; customers log in with email, password and SMS code
 - Source control and CI: GitHub
 - Collaboration: Slack and Google Workspace
 - Third parties: a card processor (holds card data and returns tokens), a KYC vendor (verifies identity documents), an email and SMS provider
@@ -53,6 +53,6 @@ Assumed relevant: GDPR, PCI DSS v4.0 (via the processor), and EU digital operati
 | ID | Assumption | Why it matters | Confidence |
 |---|---|---|---|
 | A-01 | No raw card numbers are stored | Reduces PCI scope | Medium |
-| A-02 | Staff use Okta MFA | Affects account takeover likelihood | Medium |
+| A-02 | MFA is not enforced for support staff | Raises account takeover risk | Medium |
 | A-03 | Logs are not yet centralised | Affects detection scoring | Low |
 | A-04 | Backups exist but restores are untested | Affects recovery scoring | Low |
