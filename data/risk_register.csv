@@ -1,0 +1,1 @@
+risk_id,title,asset_id,threat_stride,vulnerability,inherent_likelihood,inherent_impact,inherent_score,existing_controls,residual_likelihood,residual_impact,residual_score,treatment,treatment_action,owner,csf_function,target_date,status
