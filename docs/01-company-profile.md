@@ -25,7 +25,7 @@ Working model: remote-first, staff use a mix of company and personal phones.
 
 - Cloud: Microsoft Azure, with microservices behind an API gateway
 - Database: PostgreSQL
-- Identity: Okta SSO for staff, but MFA is not enforced for the support team; customers log in with email, password and SMS code
+- Identity: Microsoft Entra ID SSO for staff, but MFA is not enforced for the support team; customers log in with email, password and SMS code
 - Source control and CI: GitHub
 - Collaboration: Slack and Google Workspace
 - Third parties: a card processor (holds card data and returns tokens), a KYC vendor (verifies identity documents), an email and SMS provider
