@@ -20,3 +20,10 @@ A-017,KYC verification vendor,Third party,External provider that checks customer
 A-018,SMS and email provider,Third party,Sends login codes and customer notifications,Head of Engineering,Confidential,4,Third party
 A-019,Azure admin accounts,Identity,Privileged accounts that control Azure subscriptions and resources,IT Lead,Restricted,5,Azure
 A-020,AML monitoring system,Application,Flags suspicious transactions for compliance review,Head of Compliance,Restricted,4,Azure
+A-021,Azure Key Vault and secrets,Security,Stores API keys and encryption keys,Head of Engineering,Restricted,5,Azure
+A-022,Company domain and DNS,Infrastructure,Domain registration and DNS records for all services,IT Lead,Confidential,4,Third party
+A-023,Security monitoring and alerting,Security,Collects alerts and logs for detection (Defender for Cloud),IT Lead,Confidential,4,Azure
+A-024,Partner bank connection,Third party,Payment rails and settlement link to the partner bank,Head of Finance,Restricted,5,Third party
+A-025,Finance and accounting system,SaaS,Payroll invoices and financial records,Head of Finance,Confidential,3,SaaS
+A-026,HR system,SaaS,Staff personal data and contracts,Head of Operations,Confidential,3,SaaS
+A-027,Analytics and reporting data,Database,Reporting copy of customer and transaction data,Head of Compliance,Restricted,3,Azure
