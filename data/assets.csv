@@ -1,16 +1,16 @@
 asset_id,name,asset_type,description,owner,data_classification,criticality,hosting
 
-A-001,Customer wallet API,Service,Main API used by the mobile app,Head of Engineering,Confidential,5,AWS
-A-002,Production PostgreSQL database,Database,Customer records and transactions,Head of Engineering,Restricted,5,AWS
-A-003,KYC document store,Storage,Passport and ID images,Head of Compliance,Restricted,4,AWS
+A-001,Customer wallet API,Service,Main API used by the mobile app,Head of Engineering,Confidential,5,Azure
+A-002,Production PostgreSQL database,Database,Customer records and transactions,Head of Engineering,Restricted,5,Azure
+A-003,KYC document store,Storage,Passport and ID images,Head of Compliance,Restricted,4,Azure
 A-004,Okta SSO,Identity,Staff login and MFA,IT Lead,Confidential,5,SaaS
 A-005,Staff laptops,Endpoint,Company and personal devices,IT Lead,Internal,3,Remote
-A-006,Mobile app (iOS and Android),Application,Customer wallet app on iOS and Android,Head of Engineering,Confidential,5,App stores and AWS
-A-007,Admin back-office portal,Application,Staff portal to manage customers and transactions,Head of Operations,Restricted,4,AWS
+A-006,Mobile app (iOS and Android),Application,Customer wallet app on iOS and Android,Head of Engineering,Confidential,5,App stores and Azure
+A-007,Admin back-office portal,Application,Staff portal to manage customers and transactions,Head of Operations,Restricted,4,Azure
 A-008,Customer support tool,SaaS,Helpdesk where agents handle cases and see KYC status,Head of Operations,Confidential,3,SaaS
-A-009,API gateway,Infrastructure,Entry point for all app and merchant API traffic,Head of Engineering,Confidential,5,AWS
-A-010,Backup storage,Storage,Encrypted database and document backups,IT Lead,Restricted,4,AWS
-A-011,Log storage,Storage,Application and cloud audit logs,Head of Engineering,Confidential,3,AWS
+A-009,API gateway,Infrastructure,Entry point for all app and merchant API traffic,Head of Engineering,Confidential,5,Azure
+A-010,Backup storage,Storage,Encrypted database and document backups,IT Lead,Restricted,4,Azure
+A-011,Log storage,Storage,Application and cloud audit logs,Head of Engineering,Confidential,3,Azure
 A-012,GitHub code repositories,Source code,Application source code and infrastructure code,Head of Engineering,Confidential,4,SaaS
 A-013,CI/CD pipeline,Infrastructure,Builds tests and deploys code to production,Head of Engineering,Confidential,4,SaaS
 A-014,Slack workspace,SaaS,Staff messaging and file sharing,IT Lead,Internal,2,SaaS
@@ -18,5 +18,5 @@ A-015,Google Workspace,SaaS,Staff email calendar and shared documents,IT Lead,Co
 A-016,Card processor,Third party,External provider that holds card data and returns tokens,Head of Finance,Restricted,5,Third party
 A-017,KYC verification vendor,Third party,External provider that checks customer identity documents,Head of Compliance,Restricted,4,Third party
 A-018,SMS and email provider,Third party,Sends login codes and customer notifications,Head of Engineering,Confidential,4,Third party
-A-019,AWS admin accounts,Identity,Privileged accounts that control cloud infrastructure,IT Lead,Restricted,5,AWS
-A-020,AML monitoring system,Application,Flags suspicious transactions for compliance review,Head of Compliance,Restricted,4,AWS
+A-019,Azure admin accounts,Identity,Privileged accounts that control Azure subscriptions and resources,IT Lead,Restricted,5,Azure
+A-020,AML monitoring system,Application,Flags suspicious transactions for compliance review,Head of Compliance,Restricted,4,Azure
