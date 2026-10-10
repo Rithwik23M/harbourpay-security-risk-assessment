@@ -43,6 +43,84 @@ HarbourPay is a 50-person payments startup preparing for a partner-bank due dili
 python scripts/validate_register.py
 python -m pytest
 ```
+# 03 - Data Flow Diagram (in Docs)
+
+Status: DRAFT. Check each flow against your own assumptions and edit.
+
+Asset IDs refer to `data/assets.csv`. Each box is a trust zone. An arrow that crosses a box edge is a trust boundary crossing.
+
+```mermaid
+flowchart LR
+  subgraph EXT["Untrusted: internet"]
+    CUST["Customer<br/>A-006 Mobile app"]
+    MERCH["Merchant API clients"]
+  end
+
+  subgraph TP["Third parties"]
+    CARD["A-016 Card processor"]
+    KYC["A-017 KYC vendor"]
+    MSG["A-018 SMS and email provider"]
+    BANK["A-024 Partner bank"]
+  end
+
+  subgraph AZ["Azure production"]
+    GW["A-009 API gateway"]
+    API["A-001 Wallet API"]
+    DB[("A-002 Database")]
+    KYCS[("A-003 KYC document store")]
+    AML["A-020 AML monitoring"]
+    RPT[("A-027 Reporting data")]
+    BKP[("A-010 Backups")]
+    LOG[("A-011 Log storage")]
+    SEC["A-023 Security monitoring"]
+    KV["A-021 Key Vault"]
+    BO["A-007 Back-office portal"]
+  end
+
+  subgraph STAFF["Staff and corporate"]
+    LAP["A-005 Staff laptops"]
+    IDP["A-004 Entra ID"]
+    SUP["A-008 Support tool"]
+    GWS["A-015 Google Workspace"]
+    SLK["A-014 Slack"]
+    FIN["A-025 Finance system"]
+    HR["A-026 HR system"]
+  end
+
+  subgraph DEV["Engineering"]
+    GH["A-012 GitHub"]
+    CI["A-013 CI/CD pipeline"]
+  end
+
+  CUST -->|"F1 login and payments"| GW
+  MERCH -->|"F2 API calls"| GW
+  GW -->|"F3 requests"| API
+  API -->|"F4 customer and transaction data"| DB
+  API -->|"F5 card tokens"| CARD
+  API -->|"F6 identity documents"| KYC
+  KYC -->|"F7 verification result"| API
+  API -->|"F8 stores documents"| KYCS
+  API -->|"F9 login codes"| MSG
+  API -->|"F10 settlement instructions"| BANK
+  API -->|"F11 events"| AML
+  DB -->|"F12 reporting copy"| RPT
+  DB -->|"F13 backup"| BKP
+  API -->|"F14 logs"| LOG
+  LOG -->|"F15 alerts"| SEC
+  API -->|"F16 secrets lookup"| KV
+  LAP -->|"F17 staff sign-in"| IDP
+  IDP -->|"F18 access to admin portal"| BO
+  BO -->|"F19 customer records"| DB
+  LAP -->|"F20 support cases"| SUP
+  SUP -->|"F21 KYC status"| API
+  LAP -->|"F22 email and files"| GWS
+  LAP -->|"F23 messages"| SLK
+  LAP -->|"F24 payroll and HR data"| FIN
+  LAP -->|"F25 staff records"| HR
+  GH -->|"F26 code"| CI
+  CI -->|"F27 deployments"| GW
+  IDP -->|"F28 cloud admin access"| AZ
+```
 
 ## Limitations
 
